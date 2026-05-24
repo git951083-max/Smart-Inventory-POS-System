@@ -9,6 +9,9 @@ import cookieParser from "cookie-parser";
 
 import db from "../backend/src/models/index.js"
 import authRoutes from "../backend/src/modules/User/auth.routes.js";
+import productRoutes from "../backend/src/modules/product/product.routes.js";
+import categoryRoutes from "../backend/src/modules/catagory/category.routes.js";
+import sellRoutes from "../backend/src/modules/sells/sell.routes.js";
 
 const app = express();
 
@@ -57,6 +60,9 @@ app.get("/", (req, res) => {
  * API Routes
  */
 app.use("/api/auth", authRoutes);
+app.use("/api/product", productRoutes);
+app.use("/api/category", categoryRoutes);
+app.use("/api/sells", sellRoutes);
 
 /**
  * 404 Handler
